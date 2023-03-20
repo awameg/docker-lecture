@@ -1,0 +1,7 @@
+FROM ubuntu:20.04
+RUN apt-get update
+RUN apt-get install nginx -y
+RUN rm /etc/nginx/sites-available/default
+COPY site.conf /etc/nginx/sites-available/default
+
+ENTRYPOINT ["nginx","-g","daemon off;"]
