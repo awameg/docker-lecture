@@ -419,7 +419,7 @@ docker buildx build --platform linux/arm/v7,linux/amd64,linux/arm64 -t awameg/an
 
 ![image](./scr_multiarch.png)
 
-Теперь мы наш образ может запускаться на архитектура ARM
+Теперь наш образ может запускаться на архитектурах ARM
 
 # Tasks for today
 
