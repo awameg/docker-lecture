@@ -428,16 +428,26 @@ docker buildx build --platform linux/arm/v7,linux/amd64,linux/arm64 -t awameg/an
 - read conspect above
 - install docker
 
-## implement your test host
+## What needs to be done
 
+- форкните этот репозиторий https://github.com/udaltsovra/flatris
+- напишите Dockerfile для сборки приложения для следующих архитектур
+  - linux/amd64
+  - linux/arm/v8
+  - linux/arm64
+- напишите docker-compose файл, который будет запускать приложение
+  - работоспособность приложения можно проверить в браузере
+  - работоспособность приложения можно проверить в консоли
+  ```sh
+  curl -I http://localhost/
+  ```
+### Бонусное задание
+- Напишите docker-compose файл, который запускает приложение, а также в котором будет предусмотрена возможность сборки приложения в зависимости от архитектуры, на котором выполняется файл.
+### Задание считается выполненным
 
-
-
-- setup nginx supporting 2 servers
-- camp-php.local (this will be used for future php experiments)
-- camp-python.local (this will be used for future python experiments)
-- both servers should support named certificates for the domains mentioned above. use `mkcert` cli to do that
-- both server should implement custom location /hello, that will return `200 OK` status code along with the value of the `query_string` passed into that URL, [see here](https://www.techopedia.com/definition/1228/query-string), for example **https://camp-php.local/hello?tech_stack=php**, which should output the entire **query_string**
-- your SSL cert should be valid in CURL call in CLI, as well as if you open it in the browser
-- your camp-php.local server should output logs in JSON format
-- open PR when you done, in the PR - pls demonstrate the output of the `curl` call for the URL in each domain, and the screenshot in the browser
+- Предоставлена ссылка на репозиторий с файлами
+  - Dockerfile
+  - docker-compose.yaml
+    - docker-compose-multiarch.yaml
+- Предоставлен скриншот рабочего приложения
+- Предоставлен скриншот с hub.docker.com с тегами для разных архитектур
